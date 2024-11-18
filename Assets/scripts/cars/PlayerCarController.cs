@@ -15,6 +15,7 @@ public class PlayerCarController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
+    // Простой контроллер на WheelCollider для базового движения
     private void FixedUpdate()
     {
 

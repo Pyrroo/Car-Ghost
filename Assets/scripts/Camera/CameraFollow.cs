@@ -28,7 +28,7 @@ public class CameraFollow : MonoBehaviour
     {
         FollowTarget();
     }
-
+    // Определение цели по тегу
     public static void DefinitionTarget()
     {
         targetTransform = GameObject.FindWithTag("Spawner").transform;

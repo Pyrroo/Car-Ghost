@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1205,7 +1206,7 @@ MonoBehaviour:
   ghostSpeed: 10
   GhostPrefab: {fileID: 7411531652835315658, guid: 05b5f4f27789ca74db66dfbdc4e37e5c, type: 3}
   ghost: {fileID: 0}
-  rotationSpeed: 5
+  rotationSpeed: 2
 --- !u!4 &649507441
 Transform:
   m_ObjectHideFlags: 0

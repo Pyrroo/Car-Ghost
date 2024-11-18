@@ -13,6 +13,7 @@ public class Ghost : MonoBehaviour
 
     private bool isReplaying = false;
 
+    // Спавн призрака, аргумент - записанные TrackRecorderom позиции
     public void CreateGhost(List<Vector3> RecoredPosition, Transform Spawn)
     {
         ghost = Instantiate(GhostPrefab);
@@ -23,10 +24,9 @@ public class Ghost : MonoBehaviour
     }
 
 
-
+    // Передвижение призрака
     private void ReplayGhost()
-    {
-        
+    {        
         if (replayIndex >= ReplayingPositions.Count) // Если путь завершён
         {
             
@@ -36,16 +36,14 @@ public class Ghost : MonoBehaviour
             return;
         }
 
-
-
-
         Vector3 targetPosition = ReplayingPositions[replayIndex];
 
+        // Поворот
         Vector3 direction = targetPosition - ghost.transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         ghost.transform.rotation = Quaternion.Slerp(ghost.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
 
-
+        // Движение по точкам
         ghost.transform.position = Vector3.MoveTowards(ghost.transform.position, targetPosition, ghostSpeed * Time.deltaTime);
 
 

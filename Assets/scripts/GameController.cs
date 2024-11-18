@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     {
         StartGame();
     }
+
+    // Метод начала игры, спавнит игрока, подаёт команду на спавн призрака а так же подаёт камере определение нового объекта слежения
     public void StartGame()
     {
         UI.HideEndCanvas();
@@ -34,12 +36,13 @@ public class GameController : MonoBehaviour
             UI.textgc.text = "Гонка с Призраком";
             GameObject player = Instantiate(PlayerPrefab);
             player.transform.position = Spawn.transform.position;
-            CameraFollow.DefinitionTarget();
+
+            
             GhostREF.CreateGhost(recordedPositions, Spawn);
-            Debug.Log(recordedPositions.Count);
+            CameraFollow.DefinitionTarget();
         }
     }
-
+    // Скрипт находится на финише
     private void OnTriggerEnter(Collider other)
     {
         UI.ShowEndCanvas();

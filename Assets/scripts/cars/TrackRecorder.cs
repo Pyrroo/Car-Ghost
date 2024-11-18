@@ -8,6 +8,7 @@ public class TrackRecorder : MonoBehaviour
     private float recordInterval = 0.5f;
     private List<Vector3> recordedPositions = new List<Vector3>();
 
+    // Скрипт записи маршрута
     public void StartRecording(GameObject playerREF)
     {
         recordedPositions.Clear();
